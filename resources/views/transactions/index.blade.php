@@ -7,6 +7,8 @@
 
         {{ $transaction->description  }}
 
+        {{ $transaction->category->name  }}
+
         {{ $transaction->amount  }}
     @endforeach
 </div>

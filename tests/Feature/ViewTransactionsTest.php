@@ -28,7 +28,7 @@ class ViewTransactionsTest extends TestCase
         // get() transactions and make sure you have $transaction->description
 
         $this->get('/transactions')
-            ->assertSee($transaction->description);
-
+            ->assertSee($transaction->description)
+            ->assertSee($transaction->category->name);
     }
 }

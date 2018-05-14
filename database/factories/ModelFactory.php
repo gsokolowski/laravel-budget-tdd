@@ -30,6 +30,19 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'description' => $faker->sentence(2)
+        'description' => $faker->sentence(2),
+        // this function will create category and returns category_id so relation can be made
+        'category_id' => function() {
+            return factory(App\Category::class)->create()->id;
+        }
+    ];
+});
+
+// Categories
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->word
     ];
 });
