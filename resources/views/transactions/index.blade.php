@@ -6,5 +6,7 @@
         {{ $transaction->created_at->format('Y/m/d') }}
 
         {{ $transaction->description  }}
+
+        {{ $transaction->amount  }}
     @endforeach
 </div>
